@@ -26,7 +26,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.06em] leading-none text-black mb-16"
         >
-          About
+          About me.
         </motion.h1>
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-20">

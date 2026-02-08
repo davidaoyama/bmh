@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, Linkedin, FileText } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -40,14 +40,14 @@ const Footer = () => {
               className="flex items-center gap-3 text-sm sm:text-base text-gray hover:text-black transition-colors duration-300"
             >
               <Mail size={16} />
-              hello@bmh.com
+              bmhill@usc.edu
             </a>
             <a
               href="tel:+11234567890"
               className="flex items-center gap-3 text-sm sm:text-base text-gray hover:text-black transition-colors duration-300"
             >
               <Phone size={16} />
-              +1 (123) 456-7890
+              +1 (226) 934-4231
             </a>
           </div>
         </motion.div>
@@ -58,16 +58,7 @@ const Footer = () => {
           </h4>
           <div className="flex items-center gap-6">
             <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-gray hover:text-black transition-colors duration-300"
-            >
-              <Instagram size={20} />
-            </a>
-            <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/bellamariahill/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -76,13 +67,13 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="https://twitter.com"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
+              aria-label="Resume"
               className="text-gray hover:text-black transition-colors duration-300"
             >
-              <Twitter size={20} />
+              <FileText size={20} />
             </a>
           </div>
         </motion.div>
@@ -90,7 +81,7 @@ const Footer = () => {
 
       <div className="mt-16 pt-6 border-t border-black/5 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-xs text-gray">
-          &copy; {new Date().getFullYear()} BMH. All rights reserved.
+          &copy; {new Date().getFullYear()} Bella Maria Hill. All rights reserved.
         </p>
         <p className="text-xs text-gray">
           PR &amp; Marketing

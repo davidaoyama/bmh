@@ -52,7 +52,7 @@ export default function ExperiencePage() {
           transition={{ duration: 0.6 }}
           className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.06em] leading-none text-black mb-16"
         >
-          Experience
+          My experience.
         </motion.h1>
 
         <div className="space-y-0">

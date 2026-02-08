@@ -1,26 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const navLinks = [
-  { label: "Projects", href: "/projects" },
+  { label: "Works", href: "/projects" },
   { label: "Experience", href: "/experience" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "#contact" },
 ];
 
-const EMAIL = "bmhill@usc.edu";
-
 const Navbar = () => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = async () => {
-    await navigator.clipboard.writeText(EMAIL);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <motion.nav
       initial={{ opacity: 0, y: -10 }}
@@ -39,22 +29,23 @@ const Navbar = () => {
       <ul className="flex items-center gap-8" role="navigation">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <Link
-              href={link.href}
-              className="text-sm font-medium text-gray transition-colors duration-200 hover:text-black"
-            >
-              {link.label}
-            </Link>
+            {link.href.startsWith("#") ? (
+              <a
+                href={link.href}
+                className="text-sm font-medium text-gray transition-colors duration-200 hover:text-black"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                href={link.href}
+                className="text-sm font-medium text-gray transition-colors duration-200 hover:text-black"
+              >
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
-        <li>
-          <button
-            onClick={handleCopyEmail}
-            className="text-sm font-medium text-gray transition-colors duration-200 hover:text-black cursor-pointer"
-          >
-            {copied ? "Copied!" : "Contact"}
-          </button>
-        </li>
       </ul>
     </motion.nav>
   );

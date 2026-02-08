@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { projects } from "@/lib/data";
@@ -204,14 +204,14 @@ export default function Home() {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
               custom={1}
-              className="relative w-full md:w-[40%] aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
+              className="relative w-full md:w-[28%] aspect-[3/4] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
             >
               <Image
                 src="/images/bmh-headshot.webp"
                 alt="BMH portrait"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 40vw"
+                sizes="(max-width: 768px) 100vw, 28vw"
               />
             </motion.div>
           </div>

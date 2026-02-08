@@ -32,7 +32,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.6 }}
           className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.06em] leading-none text-black mb-16"
         >
-          Projects
+          My works.
         </motion.h1>
 
         <motion.div
