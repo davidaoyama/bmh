@@ -252,14 +252,16 @@ export default function Home() {
           <div className="space-y-0">
             {[
               {
-                role: "PR Manager",
-                company: "Agency One",
-                period: "2023 — Present",
+                role: "Assistant Director of Fundraising",
+                company: "Troy Camp",
+                period: "Aug 2025 — Present",
+                logo: "/images/companies/troy-camp.jpeg",
               },
               {
-                role: "Marketing Coordinator",
-                company: "Studio Two",
-                period: "2021 — 2023",
+                role: "Undergraduate Admissions Student Ambassador",
+                company: "University of Southern California",
+                period: "Oct 2023 — Present",
+                logo: "/images/companies/usc.jpeg",
               },
             ].map((exp, i) => (
               <motion.div
@@ -269,13 +271,24 @@ export default function Home() {
                 viewport={{ once: true, margin: "-30px" }}
                 variants={fadeUp}
                 custom={i}
-                className="border-t border-black/10 py-8 md:py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                className="border-t border-black/10 py-8 md:py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
               >
-                <div>
-                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-black">
-                    {exp.role}
-                  </h3>
-                  <p className="text-sm text-gray mt-1">{exp.company}</p>
+                <div className="flex items-center gap-4">
+                  <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-neutral-100 shrink-0">
+                    <Image
+                      src={exp.logo}
+                      alt={exp.company}
+                      fill
+                      className="object-cover"
+                      sizes="44px"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-black">
+                      {exp.role}
+                    </h3>
+                    <p className="text-sm text-gray mt-1">{exp.company}</p>
+                  </div>
                 </div>
                 <p className="text-xs uppercase tracking-widest text-gray">
                   {exp.period}

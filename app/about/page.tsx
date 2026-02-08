@@ -61,17 +61,86 @@ I was born on the Six Nations of the Grand River reserve in Ontario, Canada, and
             animate="visible"
             variants={fadeUp}
             custom={1}
-            className="relative w-full md:w-[45%] aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
+            className="relative w-full md:w-[30%] aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
           >
             <Image
-              src="/about.jpg"
+              src="/images/bella-david-usc.jpg"
               alt="BMH portrait"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 45vw"
+              sizes="(max-width: 768px) 100vw, 30vw"
             />
           </motion.div>
         </div>
+
+        {/* ——— Education Section ——— */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeUp}
+          custom={0}
+          className="mt-24"
+        >
+          <div className="w-full h-px bg-black/10 mb-16" />
+
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.04em] mb-10 text-black">
+            Education
+          </h2>
+
+          <div className="border-t border-black/10 py-10 md:py-14 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-12">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-gray mb-2">
+                2023 — 2027
+              </p>
+              <div className="flex items-center gap-4 mt-2">
+                <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-neutral-100 shrink-0">
+                  <Image
+                    src="/images/companies/usc.jpeg"
+                    alt="USC"
+                    fill
+                    className="object-cover"
+                    sizes="44px"
+                  />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-black">
+                  USC Annenberg School for Communication and Journalism
+                </h3>
+              </div>
+              <p className="text-sm text-gray mt-1">
+                Bachelor of Arts — Public Relations, Advertising, and Applied
+                Communication
+              </p>
+              <p className="text-sm text-gray mt-1">
+                Minor in Marketing (USC Marshall School of Business)
+              </p>
+            </div>
+
+            <div className="md:pt-6">
+              <p className="text-xs uppercase tracking-widest text-gray mb-3">
+                Activities &amp; Societies
+              </p>
+              <ul className="space-y-2">
+                {[
+                  "Student Ambassador (Tour Guide) — Undergraduate Admissions Office",
+                  "Communications Intern — USC Good Neighbors Campaign",
+                  "Native American Students Assembly",
+                  "Troy Camp Counselor",
+                  "PRSSA",
+                ].map((activity) => (
+                  <li
+                    key={activity}
+                    className="text-base sm:text-lg text-gray leading-relaxed tracking-[-0.02em] flex gap-3"
+                  >
+                    <span className="text-black/30 mt-1 shrink-0">•</span>
+                    {activity}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-black/10" />
+        </motion.div>
       </main>
       <Footer />
     </>
