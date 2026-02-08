@@ -126,26 +126,28 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="group cursor-pointer"
               >
-                {/* Thumbnail */}
-                <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-neutral-100">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+                <Link href={`/projects/${project.slug}`}>
+                  {/* Thumbnail */}
+                  <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-neutral-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
 
-                {/* Card info */}
-                <div className="mt-4 mb-2">
-                  <p className="text-xs uppercase tracking-widest text-gray mb-1">
-                    {project.category}
-                  </p>
-                  <h3 className="text-base sm:text-lg font-medium tracking-tight text-black truncate">
-                    {project.title}
-                  </h3>
-                </div>
+                  {/* Card info */}
+                  <div className="mt-4 mb-2">
+                    <p className="text-xs uppercase tracking-widest text-gray mb-1">
+                      {project.category}
+                    </p>
+                    <h3 className="text-base sm:text-lg font-medium tracking-tight text-black truncate">
+                      {project.title}
+                    </h3>
+                  </div>
+                </Link>
               </motion.article>
             ))}
           </motion.div>
@@ -207,7 +209,7 @@ export default function Home() {
               className="relative w-full md:w-[28%] aspect-[3/4] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
             >
               <Image
-                src="/images/bmh-headshot.webp"
+                src="/images/bella-dodgers.jpg"
                 alt="BMH portrait"
                 fill
                 className="object-cover"
