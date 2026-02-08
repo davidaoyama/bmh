@@ -19,7 +19,7 @@ export default function AboutPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen pt-28 pb-32 px-6 sm:px-10 md:px-20">
+      <main className="min-h-screen pt-28 pb-12 px-6 sm:px-10 md:px-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ I was born on the Six Nations of the Grand River reserve in Ontario, Canada, and
             Education
           </h2>
 
-          <div className="border-t border-black/10 py-10 md:py-14 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-12">
+          <div className="border-t border-black/10 pt-10 md:pt-14 pb-4 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-gray mb-2">
                 2023 — 2027
@@ -138,7 +138,6 @@ I was born on the Six Nations of the Grand River reserve in Ontario, Canada, and
               </ul>
             </div>
           </div>
-          <div className="border-t border-black/10" />
         </motion.div>
       </main>
       <Footer />

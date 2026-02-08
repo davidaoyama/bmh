@@ -40,7 +40,7 @@ export default function ProjectsPage() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
         >
           {projects.map((project, i) => (
             <motion.article
@@ -52,13 +52,13 @@ export default function ProjectsPage() {
               className="group cursor-pointer"
             >
               <Link href={`/projects/${project.slug}`}>
-                <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-neutral-100">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-neutral-100">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
 

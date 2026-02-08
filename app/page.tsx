@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import { projects } from "@/lib/data";
 
 // Show only first 2 projects on the home page
-const previewProjects = projects.slice(0, 2);
+const previewProjects = projects.slice(0, 3);
 
 // ——— Animation variants ———
 const fadeUp = {
@@ -95,6 +95,30 @@ export default function Home() {
             <Mail size={16} />
             bmhill@usc.edu
           </motion.a>
+
+          {/* ——— Pill Navbar ——— */}
+          <motion.nav
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.75 }}
+            className="mt-10 w-full max-w-2xl flex items-center justify-center gap-3 bg-white/60 backdrop-blur-xl rounded-full shadow-lg shadow-black/5 border border-white/50 px-6 py-3"
+            role="navigation"
+            aria-label="Main navigation"
+          >
+            {[
+              { label: "About Me", href: "/about" },
+              { label: "My Experiences", href: "/experience" },
+              { label: "My Works", href: "/projects" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="flex-1 text-center px-8 py-3 text-lg font-medium text-gray rounded-full transition-all duration-200 hover:bg-white/80 hover:text-black hover:shadow-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </motion.nav>
         </section>
 
         {/* ——— Projects Preview Section ——— */}
@@ -115,7 +139,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
           >
             {previewProjects.map((project, i) => (
               <motion.article
@@ -128,13 +152,13 @@ export default function Home() {
               >
                 <Link href={`/projects/${project.slug}`}>
                   {/* Thumbnail */}
-                  <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-neutral-100">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-neutral-100">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
 
@@ -171,10 +195,12 @@ export default function Home() {
           </motion.div>
         </section>
 
+        <div className="px-6 sm:px-10 md:px-20">
+          <div className="w-full h-px bg-black/10" />
+        </div>
+
         {/* ——— About Me Brief ——— */}
         <section className="px-6 sm:px-10 md:px-20 py-24">
-          <div className="w-full h-px bg-black/10 mb-20" />
-
           <div className="flex flex-col md:flex-row gap-12 md:gap-20">
             <motion.div
               initial="hidden"
@@ -188,14 +214,24 @@ export default function Home() {
                 About Me
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl font-medium tracking-[-0.04em] leading-[1.2] text-black max-w-2xl">
-                I help brands tell their story through strategic PR, compelling
-                campaigns, and thoughtful marketing that resonates with the right
-                audience.
+                My whole life revolves around storytelling.
               </p>
               <p className="mt-6 text-base text-gray leading-relaxed max-w-xl tracking-[-0.02em]">
-                With experience spanning media relations, brand strategy, and
-                digital marketing, I craft narratives that connect brands with
-                their communities.
+                Growing up Indigenous, my aunties would gather around tables
+                lined with handmade delicacies, filling entire rooms with
+                laughter. In our culture, sharing memories is a living
+                tradition&mdash;and it was around these tables that my passion for
+                communication first took shape.
+              </p>
+              <p className="mt-4 text-base text-gray leading-relaxed max-w-xl tracking-[-0.02em]">
+                Today, I&apos;m a PR &amp; Advertising major driven by that same
+                belief: stories have the power to connect, move, and build
+                community. What started as an appreciation for storytelling has
+                grown into hands-on experience across brand strategy, digital
+                marketing, and content creation.
+              </p>
+              <p className="mt-4 text-base text-gray leading-relaxed max-w-xl tracking-[-0.02em]">
+                My goal is to help build brands and products that feel human.
               </p>
 
             </motion.div>
@@ -236,8 +272,12 @@ export default function Home() {
           </motion.div>
         </section>
 
+        <div className="px-6 sm:px-10 md:px-20">
+          <div className="w-full h-px bg-black/10" />
+        </div>
+
         {/* ——— Experience Brief ——— */}
-        <section className="px-6 sm:px-10 md:px-20 pb-24">
+        <section className="px-6 sm:px-10 md:px-20 py-24">
           <motion.h2
             initial="hidden"
             whileInView="visible"
