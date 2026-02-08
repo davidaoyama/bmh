@@ -55,7 +55,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-48 h-48 md:w-80 md:h-80 overflow-hidden rounded-full bg-neutral-200 shrink-0"
+              className="relative w-56 h-56 md:w-96 md:h-96 overflow-hidden rounded-full bg-neutral-200 shrink-0"
             >
               <Image
                 src="/images/bmh-headshot.webp"
@@ -206,7 +206,7 @@ export default function Home() {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
               custom={1}
-              className="relative w-full md:w-[28%] aspect-[3/4] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
+              className="relative w-full md:w-[20%] aspect-[3/4] overflow-hidden rounded-sm bg-neutral-100 shrink-0"
             >
               <Image
                 src="/images/bella-dodgers.jpg"
@@ -249,7 +249,13 @@ export default function Home() {
             Experience
           </motion.h2>
 
-          <div className="space-y-0">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
+          >
             {[
               {
                 role: "Assistant Director of Fundraising",
@@ -263,40 +269,38 @@ export default function Home() {
                 period: "Oct 2023 — Present",
                 logo: "/images/companies/usc.jpeg",
               },
+              {
+                role: "Communications Intern",
+                company: "USC Good Neighbors Campaign",
+                period: "Mar 2025 — Aug 2025",
+                logo: "/images/companies/usc.jpeg",
+              },
             ].map((exp, i) => (
               <motion.div
                 key={exp.role}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-30px" }}
                 variants={fadeUp}
                 custom={i}
-                className="border-t border-black/10 py-8 md:py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                className="border border-black/10 rounded-lg p-5"
               >
-                <div className="flex items-center gap-4">
-                  <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-neutral-100 shrink-0">
-                    <Image
-                      src={exp.logo}
-                      alt={exp.company}
-                      fill
-                      className="object-cover"
-                      sizes="44px"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-black">
-                      {exp.role}
-                    </h3>
-                    <p className="text-sm text-gray mt-1">{exp.company}</p>
-                  </div>
+                <div className="relative w-9 h-9 rounded-md overflow-hidden bg-neutral-100 shrink-0 mb-4">
+                  <Image
+                    src={exp.logo}
+                    alt={exp.company}
+                    fill
+                    className="object-cover"
+                    sizes="36px"
+                  />
                 </div>
-                <p className="text-xs uppercase tracking-widest text-gray">
+                <h3 className="text-base font-semibold tracking-tight text-black leading-snug">
+                  {exp.role}
+                </h3>
+                <p className="text-sm text-gray mt-1">{exp.company}</p>
+                <p className="text-xs uppercase tracking-widest text-gray mt-3">
                   {exp.period}
                 </p>
               </motion.div>
             ))}
-            <div className="border-t border-black/10" />
-          </div>
+          </motion.div>
 
           <motion.div
             initial="hidden"

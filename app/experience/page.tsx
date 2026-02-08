@@ -75,7 +75,7 @@ export default function ExperiencePage() {
           My experience.
         </motion.h1>
 
-        <div className="space-y-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.id}
@@ -84,53 +84,49 @@ export default function ExperiencePage() {
               viewport={{ once: true, margin: "-30px" }}
               variants={fadeUp}
               custom={i}
-              className="border-t border-black/10 py-10 md:py-14 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-12"
+              className="border border-black/10 rounded-lg p-6"
             >
-              <div>
-                <p className="text-xs uppercase tracking-widest text-gray mb-2">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="relative w-9 h-9 rounded-md overflow-hidden bg-neutral-100 shrink-0">
+                  <Image
+                    src={exp.logo}
+                    alt={exp.company}
+                    fill
+                    className="object-cover"
+                    sizes="36px"
+                  />
+                </div>
+                <p className="text-xs uppercase tracking-widest text-gray">
                   {exp.period}
                 </p>
-                <div className="flex items-center gap-4 mt-2">
-                  <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-neutral-100 shrink-0">
-                    <Image
-                      src={exp.logo}
-                      alt={exp.company}
-                      fill
-                      className="object-cover"
-                      sizes="44px"
-                    />
-                  </div>
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-black">
-                      {exp.role}
-                    </h2>
-                    <a
-                      href={exp.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray mt-1 inline-flex items-center gap-1.5 hover:text-black transition-colors duration-200"
-                    >
-                      {exp.company}
-                      <ExternalLink size={12} />
-                    </a>
-                  </div>
-                </div>
               </div>
 
-              <ul className="space-y-3 md:pt-6">
+              <h2 className="text-lg font-semibold tracking-tight text-black leading-snug">
+                {exp.role}
+              </h2>
+              <a
+                href={exp.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray mt-1 inline-flex items-center gap-1.5 hover:text-black transition-colors duration-200"
+              >
+                {exp.company}
+                <ExternalLink size={12} />
+              </a>
+
+              <ul className="space-y-2 mt-4">
                 {exp.bullets.map((bullet, j) => (
                   <li
                     key={j}
-                    className="text-base sm:text-lg text-gray leading-relaxed tracking-[-0.02em] flex gap-3"
+                    className="text-sm text-gray leading-relaxed tracking-[-0.02em] flex gap-2"
                   >
-                    <span className="text-black/30 mt-1 shrink-0">•</span>
+                    <span className="text-black/30 mt-0.5 shrink-0">•</span>
                     {bullet}
                   </li>
                 ))}
               </ul>
             </motion.div>
           ))}
-          <div className="border-t border-black/10" />
         </div>
       </main>
       <Footer />

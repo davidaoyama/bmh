@@ -82,7 +82,6 @@ I was born on the Six Nations of the Grand River reserve in Ontario, Canada, and
           custom={0}
           className="mt-24"
         >
-          <div className="w-full h-px bg-black/10 mb-16" />
 
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.04em] mb-10 text-black">
             Education
