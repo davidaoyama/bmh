@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const experiences = [
   {
@@ -83,6 +84,7 @@ export default function ExperiencePage() {
           <div className="border-t border-black/10" />
         </div>
       </main>
+      <Footer />
     </>
   );
 }

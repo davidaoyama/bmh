@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -43,10 +44,14 @@ export default function AboutPage() {
               audience.
             </h2>
             <p className="mt-8 text-base sm:text-lg text-gray leading-relaxed max-w-xl tracking-[-0.02em]">
-              With experience spanning media relations, brand strategy, and
-              digital marketing, I craft narratives that connect brands with
-              their communities. Every project is an opportunity to create
-              something meaningful.
+              
+I was born on the Six Nations of the Grand River reserve in Ontario, Canada, and attribute my admiration for fashion to being surrounded by beautiful Indigenous regalia in my childhood. Throughout my adolescence, I explored how appearances and style intertwined with self-expression and individualism, leading me to the world of personal branding. What started as a fascination with the hows and whys of shaping our unique voices slowly revealed itself as a path into public relations.  
+            </p>
+            <p className="mt-8 text-base sm:text-lg text-gray leading-relaxed max-w-xl tracking-[-0.02em]">
+              Now studying Public Relations and Advertising with a minor in Marketing at USC, I’m drawn to the places where storytelling, culture, and design intersect. For me, communication is most powerful when it reflects not only what someone wants to say, but why it matters. I hope to build a career where I can help shape narratives that create connection. 
+            </p>
+            <p className="mt-8 text-base sm:text-lg text-gray leading-relaxed max-w-xl tracking-[-0.02em]">
+              Outside of professional spaces, I find inspiration in small rituals: wandering through stores to study how brands present themselves, paying attention to shifts in style and taste, and curating playlists that capture moods and moments. These habits keep me grounded in the idea that communication is everywhere, and the best stories often begin long before they are written. 
             </p>
           </motion.div>
 
@@ -68,6 +73,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

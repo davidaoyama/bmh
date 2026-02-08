@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { projects } from "@/lib/data";
 
 const fadeUp = {
@@ -71,6 +72,7 @@ export default function ProjectsPage() {
           ))}
         </motion.div>
       </main>
+      <Footer />
     </>
   );
 }
